@@ -1,16 +1,25 @@
 #!/usr/bin/python3
-#f = open('input1')
-f = open('temp')
-q = queue.Queue(maxsize=3)
-last = -1
+f = open('input1')
+#f = open('temp')
 count = 0
+window = []
+last = -1
+i = 0
 for line in f:
-    next = int(line.strip())
-    diff = 0
-    if last > -1:
-        diff = next - last
-    if diff > 0:
-        count += 1
-    last = next
+    if len(window) < 3:
+        window.append(int(line.strip()))
+    else:
+        window[i] = int(line.strip())
+    if len(window) == 3:
+        next = sum(window)
+        diff = 0
+        if last > -1:
+            diff = next - last
+        if diff > 0:
+            count += 1
+        last = next
+    i += 1
+    if i > 2:
+        i = 0
 print(count)
 
