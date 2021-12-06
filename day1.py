@@ -1,6 +1,6 @@
 #!/usr/bin/python3
-#f = open('input1')
-f = open('temp')
+f = open('day1input')
+#f = open('temp')
 last = -1
 count = 0
 for line in f:

@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-f = open('input1')
+f = open('day1input')
 #f = open('temp')
 count = 0
 window = []
